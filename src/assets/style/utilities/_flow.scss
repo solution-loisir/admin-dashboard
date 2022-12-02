@@ -1,0 +1,9 @@
+@use "../tokens";
+
+.flow > * + * {
+  margin-top: var(--flow-space, #{tokens.$size-400});
+}
+
+[data-flow-space="size-300"] {
+  --flow-space: #{tokens.$size-300};
+}

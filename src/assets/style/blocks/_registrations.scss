@@ -1,0 +1,17 @@
+@use "../tokens";
+
+.inscription-section {
+  width: tokens.$width-sm;
+  &__level {
+    border: 3px solid var(--color-light);
+    background-color: var(--color-less-dark);
+    padding: tokens.$size-500;
+    border-radius: tokens.$radius-std;
+  }
+  &__clients {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    border-radius: tokens.$radius-std;
+    padding: tokens.$size-200 tokens.$size-400;
+  }
+}

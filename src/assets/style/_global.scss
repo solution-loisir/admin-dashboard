@@ -1,0 +1,106 @@
+@use "tokens";
+@use "sass:color";
+
+:root {
+  font-size: tokens.$font-base-size;
+  --color-primary: #{tokens.$color-primary};
+  --color-dark-primary: #{color.scale(tokens.$color-primary, $lightness: -30%)};
+  --color-light-primary: #{color.scale(tokens.$color-primary, $lightness: 20%)};
+  --color-accent: #{tokens.$color-secondary};
+  --color-low-accent: #{tokens.$color-tertiary};
+  --color-dark: #{tokens.$color-dark};
+  --color-dark-transparent: rgb(40, 44, 52, 0.9);
+  --color-less-dark: #{color.scale(tokens.$color-dark, $lightness: 5%)};
+  --color-less-less-dark: #{color.scale(tokens.$color-dark, $lightness: 15%)};
+  --color-light: #{color.scale(tokens.$color-primary, $lightness: 98%)};
+  --color-gray: #{tokens.$color-gray};
+  --color-white: #{tokens.$color-white};
+}
+
+body {
+  font-family: tokens.$font-base-family;
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  padding-bottom: tokens.$padding-lg;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: tokens.$size-700;
+}
+
+h2 {
+  font-size: tokens.$size-600;
+}
+
+h3 {
+  font-size: tokens.$size-500;
+}
+
+h1,
+h2,
+h3 {
+  font-family: tokens.$font-base-family;
+  line-height: 1.2;
+}
+
+main {
+  display: block;
+}
+
+a {
+  display: inline-block;
+}
+
+nav {
+  a {
+    text-decoration: none;
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+ol,
+ul {
+  padding-left: tokens.$size-500;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+button {
+  cursor: pointer;
+}
+
+table {
+  table-layout: fixed;
+  width: min(44ch, 96vw);
+  border-collapse: collapse;
+  border: 5px solid var(--color-primary);
+  background-color: var(--color-gray);
+  color: var(--color-dark);
+  padding: tokens.$size-300;
+  caption {
+    color: var(--color-light);
+  }
+  tbody tr:nth-child(even) {
+    background-color: var(--color-white);
+  }
+}
+
+th {
+  text-align: left;
+  width: 60%;
+  padding-inline: tokens.$size-300;
+}
+
+td {
+  text-align: center;
+  width: 40%;
+  padding-inline: tokens.$size-300;
+}

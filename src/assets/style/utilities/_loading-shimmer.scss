@@ -1,0 +1,33 @@
+.loading-shimmer {
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: shimmer;
+  animation-timing-function: linear;
+  background: #e9e9ed;
+  background: linear-gradient(to right, #e9e9ed 8%, #fefefe 18%, #e9e9ed 33%);
+  background-size: 1200px 100%;
+  border-radius: 1rem;
+}
+
+.loading-shimmer > * {
+  visibility: hidden;
+}
+
+@-webkit-keyframes shimmer {
+  0% {
+      background-position: -100% 0;
+  }
+  100% {
+      background-position: 100% 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+      background-position: -1200px 0;
+  }
+  100% {
+      background-position: 1200px 0;
+  }
+}

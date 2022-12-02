@@ -1,0 +1,15 @@
+@use "../tokens";
+
+.flex-nav {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: tokens.$size-400 
+  }
+  a {
+    color: var(--color-light-primary);
+  }
+  a.active {
+    text-decoration: underline;
+  }
+}

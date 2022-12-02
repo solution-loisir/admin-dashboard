@@ -1,0 +1,39 @@
+@use "sass:color";
+
+/* Adapted from view-source:https://identity.netlify.com/ (line 59). */
+[data-netlify-identity-button] {
+	height: 44px;
+}
+
+[data-netlify-identity-button] a {
+	display: block;
+	position: relative;
+	width: 100%;
+	max-width: 184px;
+	height: auto;
+	padding: 8px 12px;
+	outline: 0;
+	cursor: pointer;
+	border: 2px solid var(--color-dark-primary); //#007a70
+	border-radius: 4px;
+	background-color: var(--color-primary); //#00ad9F
+	color: white;
+	transition: background-color 0.2s ease;
+	font-weight: 700;
+	line-height: 24px;
+	text-align: center;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+[data-netlify-identity-button] a:hover,
+[data-netlify-identity-button] a:focus {
+	background-color: var(--color-light-primary); //#007a70
+	text-decoration: none;
+}
+
+.active-button {
+  background-color: #aaaab5;
+  border: 1px #aaaab5 solid;
+  border-radius: 3px;
+}

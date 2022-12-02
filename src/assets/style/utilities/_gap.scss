@@ -1,0 +1,5 @@
+@use "../tokens";
+
+.flex-space {
+  gap: tokens.$size-400;
+}

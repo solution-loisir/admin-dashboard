@@ -1,0 +1,9 @@
+@use "../tokens";
+
+.width-sm {
+  width: tokens.$width-sm;
+}
+
+.height-full {
+  height: 100vh;
+}

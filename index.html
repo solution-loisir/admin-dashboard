@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="shortcut icon" type="image/ico" href="/src/assets/favicon.ico" />
+    <title>Bulle | Tableau de bord</title>
+    <style>
+      @import "src/assets/style/index.css";
+    </style>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  </head>
+  <body>
+    <noscript>Pour pouvoir exécuter cette application, vous devez activer JavaScript.</noscript>
+    <header class="flex-column-center flex-space wrapper">
+      <h1>Tableau de bord</h1>
+      <p data-id="admin-user-name" class="visually-hidden">Bonjour</p>
+      <div data-netlify-identity-button></div>
+    </header>
+
+    <main id="root" class="flex-column-center flex-space wrapper"></main>
+
+    <script src="/src/index.jsx" type="module"></script>
+  </body>
+</html>
