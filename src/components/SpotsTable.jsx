@@ -4,16 +4,19 @@ function SpotsTable(props) {
       <caption>Places disponibles</caption>
       <tbody>
         <tr>
-          <th>Total des places offertes</th>
+          <th>Places offertes</th>
           <td>{props.total}</td>
+          <td>100%</td>
         </tr>
         <tr>
-          <th>Total des places restantes</th>
+          <th>Places restantes</th>
           <td>{props.left}</td>
+          <td>{`${Math.round(props.left / props.total * 100)}%`}</td>
         </tr>
         <tr>
-          <th>Total des places réservées</th>
+          <th>Places réservées</th>
           <td>{props.taken}</td>
+          <td>{`${Math.round(props.taken / props.total * 100)}%`}</td>
         </tr>
       </tbody>
     </table>
