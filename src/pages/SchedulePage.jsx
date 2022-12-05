@@ -2,6 +2,7 @@ import { useContext, createSignal, createComputed, createEffect, on } from "soli
 import { SelectedData } from "../App";
 import Schedule from "../components/Schedule";
 import AgeLegend from "../components/AgeLegend";
+import ActivitiesTable from "../components/ActivitiesTable";
 
 function removeAllActiveClass() {
   const buttons = document.querySelectorAll('[data-class="filter-button"]');
@@ -13,6 +14,9 @@ function SchedulePage() {
   const [schedule, setSchedule] = createSignal();
   createComputed(() => setSchedule(state().ScheduleData));
   createEffect(on(state, removeAllActiveClass, { defer: true }));
+  const totalCourses = () => state().Activities.length;
+  const availableCourses = () => state().Activities.filter((activity) => activity.SpotsRemaining !== 0).length;
+  const fullCourses = () => state().Activities.filter((activity) => activity.SpotsRemaining === 0).length;
 
   const clickHandler = (filter) => {
     const filtered = Object.keys(state().ScheduleData).reduce((obj, sourceKey) => {
@@ -31,6 +35,7 @@ function SchedulePage() {
   return (
     <>
       <AgeLegend />
+      <ActivitiesTable full={fullCourses()} available={availableCourses()} total={totalCourses()} />
       <nav class="flex-nav" onClick={delegateHandler}>
         <ul role="list">
           <button 
