@@ -63,7 +63,7 @@ function Schedule(props) {
                 title={`${ capitalize(item.niveau).replace(/u/, "u ") } ${ item.emoji }\nLe ${ weekDay }\nde ${ item.text }.${ item.complet ? " \nCe cours est COMPLET." : ` \nIl reste ${item.spots_remaining} ${item.spots_remaining === 1 ? "place" : "places"}.`}`}>
                 <a href={item.link}>
                   <span classList={{ complet: item.complet }}>{`${item.text} ${item.emoji}`}</span>
-                  {`${item.spots_remaining ? ` ${item.max_attendance - item.spots_remaining} / ${item.max_attendance}` : ""}`}
+                  {`${item.spots_remaining ? ` ${item.spots_remaining} / ${item.max_attendance}` : ""}`}
                 </a>
               </div>
             )}
