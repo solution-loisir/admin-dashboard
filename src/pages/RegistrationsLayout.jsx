@@ -15,8 +15,8 @@ function RegistrationsLayout() {
   createComputed(() => setRegistrations(state().ActivitiesModel));
   return (
     <Suspense fallback={<RegistrationSkeleton />}>
-      <RegistrationsContext.Provider value={registrations}>
-        <Show when={accounts()}>
+      <Show when={registrations() && accounts()}>
+        <RegistrationsContext.Provider value={registrations}>
           <AccountsContext.Provider value={accounts()}>
             <DaySelector handler={(e) => {
               const target = e.target;
@@ -31,8 +31,8 @@ function RegistrationsLayout() {
             </nav>
             <Outlet />
           </AccountsContext.Provider>
-        </Show>
-      </RegistrationsContext.Provider>
+        </RegistrationsContext.Provider>
+      </Show>
     </Suspense>
   );
 };
