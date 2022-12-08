@@ -37,3 +37,20 @@
   border: 1px #aaaab5 solid;
   border-radius: 3px;
 }
+
+.button {
+	padding: 8px 12px;
+	cursor: pointer;
+	border: 2px solid var(--color-dark-primary);
+	border-radius: 4px;
+	background-color: var(--color-primary);
+	color: white;
+	transition: background-color 0.2s ease;
+	font-weight: 700;
+	line-height: 24px;
+	white-space: nowrap;
+	&:hover,
+	&:focus {
+		background-color: var(--color-light-primary);
+	}
+}

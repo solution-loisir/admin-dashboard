@@ -36,7 +36,7 @@ function App() {
         <FullData.Provider value={data()}>
           <SelectedData.Provider value={state}>
             <ClipboardCopyFeedback />
-            <button onClick={() => refetch()}>Actualiser les données</button>
+            <button class="button" onClick={() => refetch()}>Actualiser les données</button>
             <br />
             <div style="margin: -16px;">
               <Show when={state().SpotsStats.TotalSpotsRemaining === 0}>
