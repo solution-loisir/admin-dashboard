@@ -20,6 +20,7 @@ module.exports = (activities) => {
   }, {});
 
   const addingEmojis = JSON.stringify(reorderedModel)
+    .replace(/Niveau initiation • 2 à 6 mois/g, "Niveau initiation 🐢 2 à 6 mois")
     .replace(/Niveau initiation • 2 à 7 mois/g, "Niveau initiation 🐢 2 à 7 mois")
     .replace(/Niveau 1 • 6 à 12 mois/g, "Niveau 1 🐟 6 à 12 mois")
     .replace(/Niveau 2 • 1 à 2 ans/g, "Niveau 2 🐳 1 à 2 ans")
