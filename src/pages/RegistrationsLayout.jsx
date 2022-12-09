@@ -30,7 +30,7 @@ function RegistrationsLayout() {
                 <A href="/inscriptions/courriels/" noScroll={true} end={true}>Liste des courriels</A>
               </ul>
             </nav>
-            <RegistrationsCards activities={state().Activities} />
+            
             <Outlet />
           </AccountsContext.Provider>
         </RegistrationsContext.Provider>
