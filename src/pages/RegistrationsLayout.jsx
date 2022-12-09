@@ -3,6 +3,7 @@ import { A, Outlet, useRouteData } from "@solidjs/router";
 import { SelectedData } from "../App";
 import DaySelector from "../components/DaySelector";
 import RegistrationSkeleton from "../components/RegistrationSkeleton";
+import RegistrationsCards from "../components/RegistrationsCards";
 import { filterByDay } from "../utilities/filterByDay";
 
 export const RegistrationsContext = createContext({});
@@ -29,6 +30,7 @@ function RegistrationsLayout() {
                 <A href="/inscriptions/courriels/" noScroll={true} end={true}>Liste des courriels</A>
               </ul>
             </nav>
+            <RegistrationsCards activities={state().Activities} />
             <Outlet />
           </AccountsContext.Provider>
         </RegistrationsContext.Provider>
