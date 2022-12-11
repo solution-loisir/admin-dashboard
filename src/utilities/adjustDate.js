@@ -1,0 +1,1 @@
+export const adjustDate = (date) => new Date(new Date(date).getTime() - 18000000).getTime();
