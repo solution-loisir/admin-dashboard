@@ -8,8 +8,8 @@ import { addEmoji } from "../utilities/addEmoji";
 function RegistrationsCard(props) {
   const registration = createMemo(() => props.activities.map(activity => activity.Registrations).flat().sort((a, b) => new Date(b.DateCreated) - new Date(a.DateCreated))[props.index]);
   return (
-    <details>
-      <summary>Dernière inscription</summary>
+    <details class="width-sm">
+      <summary class="button summary-btn">Dernière inscription</summary>
       <ul role="list" class="inscription-section__clients">
         <li>{registration().Person.FullName}</li>
         <li>Naissance : {dateReadable(registration().Person.DateOfBirth)}</li>

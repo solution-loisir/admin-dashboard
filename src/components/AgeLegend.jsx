@@ -1,8 +1,8 @@
 function AgeLegend() {
   return (
-    <details>
-      <summary>Niveaux et groupes d'âges</summary>
-      <ul class="legende-age">
+    <details class="legend-age-container">
+      <summary class="text-center">Niveaux et groupes d'âges</summary>
+      <ul class="legende-age" role="list">
         <li>Initiation 🐢 - à partir de 6 semaines</li>
         <li>Niveau 1 🐟 - à partir de 6 mois</li>
         <li>Niveau 2 🐳 - à partir de 1 an</li>

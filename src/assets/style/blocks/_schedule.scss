@@ -106,12 +106,10 @@
 .niveau-default {
     border: 3px solid tokens.$niveau-default;
 }
-.legende-age {
-    list-style: none;
-    margin-bottom: 2em;
-    @media(max-width: 378px) {font-size: 0.9em;}
+.legende-age-container {
+    width: min(36ch, 94vw);
 }
-.legende-age  li:nth-child(-n+6)::before {
+.legende-age li:nth-child(-n+6)::before {
     content: "";
     display: inline-block;
     position: relative;

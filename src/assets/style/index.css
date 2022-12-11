@@ -143,7 +143,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-button {
+button,
+summary {
   cursor: pointer;
 }
 
@@ -227,6 +228,16 @@ td {
 }
 .button:hover, .button:focus {
   background-color: var(--color-light-primary);
+}
+
+.summary-btn {
+  text-align: center;
+  background-color: #FF6400;
+  border: 2px solid #B84800;
+}
+.summary-btn:hover, .summary-btn:focus {
+  background-color: #B84800;
+  border: 2px solid #FF6400;
 }
 
 .flex-nav ul {
@@ -486,14 +497,8 @@ td {
   border: 3px solid #60cc2e;
 }
 
-.legende-age {
-  list-style: none;
-  margin-bottom: 2em;
-}
-@media (max-width: 378px) {
-  .legende-age {
-    font-size: 0.9em;
-  }
+.legende-age-container {
+  width: min(36ch, 94vw);
 }
 
 .legende-age li:nth-child(-n+6)::before {
@@ -740,6 +745,10 @@ td {
 
 .height-full {
   height: 100vh;
+}
+
+.text-center {
+  text-align: center;
 }
 
 /*# sourceMappingURL=index.css.map */

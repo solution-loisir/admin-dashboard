@@ -54,3 +54,14 @@
 		background-color: var(--color-light-primary);
 	}
 }
+
+.summary-btn {
+	text-align: center;
+	background-color: #FF6400;
+	border: 2px solid #B84800;
+	&:hover,
+	&:focus {
+		background-color: #B84800;
+		border: 2px solid #FF6400;
+	}
+}
