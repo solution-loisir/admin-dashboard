@@ -11,7 +11,7 @@ function EmailList() {
     <div class="flow" data-flow-space="size-300">
       <div class="flex">
         <ClipboardCopy label="Copier les courriels" for="#emails" />
-        <span><b>({numberOfEmails})</b></span>
+        <span><b>({numberOfEmails()})</b></span>
       </div>
       <p id="emails">
         <For each={emails()}>
