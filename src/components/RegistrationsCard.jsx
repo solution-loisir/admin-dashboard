@@ -27,7 +27,7 @@ function RegistrationsCard(props) {
         <li>Date d'inscription : {dateReadable(adjustDate(registration().DateCreated))}</li>
         <li>Heure d'inscription : {timeReadable(adjustDate(registration().DateCreated)).replace(/:/, "h")}</li>
         <li>{addEmoji(registration().Category.Name)}</li>
-        <li>{`${registration().SubCategory.Name} ${registration().Activity.Name}`}</li>
+        <li>{`${registration().SubCategory.Name}, ${registration().Activity.Name}`}</li>
       </ul>
     </details>
   );
