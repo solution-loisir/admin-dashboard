@@ -25,7 +25,7 @@ function RegistrationsCard(props) {
           <li>Travail : <a href={`tel:${registration().Person.TelephoneWork}`}>{registration().Person.TelephoneWork}</a></li>
         </Show>
         <li>Date d'inscription : {dateReadable(adjustDate(registration().DateCreated))}</li>
-        <li>Heure d'inscription : {timeReadable(adjustDate(registration().DateCreated))}</li>
+        <li>Heure d'inscription : {timeReadable(adjustDate(registration().DateCreated)).replace(/:/, "h")}</li>
         <li>{addEmoji(registration().Category.Name)}</li>
         <li>{`${registration().SubCategory.Name} ${registration().Activity.Name}`}</li>
       </ul>
