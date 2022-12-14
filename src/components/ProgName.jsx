@@ -1,4 +1,4 @@
-import { For, useContext, Show } from "solid-js";
+import { For, useContext } from "solid-js";
 import { FullData } from "../App";
 
 function ProgName(props) {
