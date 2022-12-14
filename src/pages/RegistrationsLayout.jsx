@@ -1,4 +1,4 @@
-import { createContext, createSignal, useContext, createComputed, Suspense, Show } from "solid-js";
+import { createContext, createSignal, useContext, createComputed, Suspense, Show, createMemo } from "solid-js";
 import { A, Outlet, useRouteData } from "@solidjs/router";
 import { SelectedData } from "../App";
 import DaySelector from "../components/DaySelector";
@@ -14,6 +14,7 @@ function RegistrationsLayout() {
   const accounts = useRouteData();
   const [registrations, setRegistrations] = createSignal();
   createComputed(() => setRegistrations(state().ActivitiesModel));
+  const registrationsFullList = createMemo(() => state().Activities.map(activity => activity.Registrations).flat().sort((a, b) => new Date(b.DateCreated) - new Date(a.DateCreated)));
   return (
     <Suspense fallback={<RegistrationSkeleton />}>
       <Show when={registrations() && accounts()}>
@@ -30,7 +31,10 @@ function RegistrationsLayout() {
                 <A href="/inscriptions/courriels/" noScroll={true} end={true}>Liste des courriels</A>
               </ul>
             </nav>
-            <RegistrationsCard activities={state().Activities} index={0} />
+            <details class="width-sm">
+              <summary class="button summary-btn">Dernière inscription</summary>
+              <RegistrationsCard regList={registrationsFullList()} index={0} />
+            </details>
             <Outlet />
           </AccountsContext.Provider>
         </RegistrationsContext.Provider>
