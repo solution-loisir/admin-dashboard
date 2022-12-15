@@ -40,7 +40,7 @@ function App() {
             <br />
             <div style="margin: -16px;">
               <Show when={state().SpotsStats.TotalSpotsRemaining === 0}>
-                <ConfettiExplosion class="hide" duration={2000} />
+                <ConfettiExplosion duration={2000} />
               </Show>
             </div>
             <nav class="flex-nav">
