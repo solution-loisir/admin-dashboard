@@ -1,6 +1,13 @@
+import { Title } from "@solidjs/meta";
+
 function Error404() {
   return (
-    <big><big>404</big> Page not found</big>
+    <>
+      <Title>Bulle | 🧮 404 Page not found</Title>
+      <big>
+        <big>404</big> Page not found
+      </big>
+    </>
   );
 }
 

@@ -1,5 +1,6 @@
 import { createSignal, createContext, lazy, createResource, Suspense, Show, createComputed } from "solid-js";
 import { Routes, Route, A } from "@solidjs/router";
+import { Title } from "@solidjs/meta";
 import ProgName from './components/ProgName';
 import ProgTitle from "./components/ProgTitle";
 const EmailList = lazy(() => import("./components/EmailList"));
@@ -32,6 +33,7 @@ function App() {
   });
   return (
     <Suspense fallback={<Loader />}>
+      <Title>Bulle | 🧮 Tableau de bord</Title>
       <Show when={data()}>
         <FullData.Provider value={data()}>
           <SelectedData.Provider value={state}>

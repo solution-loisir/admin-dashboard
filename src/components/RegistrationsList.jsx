@@ -1,4 +1,5 @@
 import { For, Show, useContext } from "solid-js";
+import { Title } from "@solidjs/meta";
 import { RegistrationsContext } from "../pages/RegistrationsLayout";
 import { dateReadable } from "../utilities/date-readable";
 import ClipboardCopy from "./ClipboardCopy";
@@ -8,6 +9,7 @@ function RegistrationsList() {
   const model = useContext(RegistrationsContext);
   return (
     <section class="[ inscription-section ] [ flow ]">
+      <Title>Bulle | 🧮 Inscriptions</Title>
       <For each={Object.keys(model())}>
         {(category) => (
           <>

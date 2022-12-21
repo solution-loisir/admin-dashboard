@@ -1,5 +1,6 @@
 import { createContext, createSignal, useContext, createComputed, Suspense, Show, createMemo } from "solid-js";
 import { A, Outlet, useRouteData } from "@solidjs/router";
+import { Title } from "@solidjs/meta";
 import { SelectedData } from "../App";
 import DaySelector from "../components/DaySelector";
 import RegistrationSkeleton from "../components/RegistrationSkeleton";
@@ -17,6 +18,7 @@ function RegistrationsLayout() {
   const registrationsFullList = createMemo(() => state().Activities.map(activity => activity.Registrations).flat().sort((a, b) => new Date(b.DateCreated) - new Date(a.DateCreated)));
   return (
     <Suspense fallback={<RegistrationSkeleton />}>
+      <Title>Bulle | 🧮 Inscriptions</Title>
       <Show when={registrations() && accounts()}>
         <RegistrationsContext.Provider value={registrations}>
           <AccountsContext.Provider value={accounts()}>

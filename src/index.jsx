@@ -1,6 +1,7 @@
 /* @refresh reload */
 import { render } from "solid-js/web";
 import { Router } from "@solidjs/router";
+import { MetaProvider } from "@solidjs/meta";
 import App from "./App";
 
 
@@ -15,9 +16,11 @@ netlifyIdentity.on("login", (user) => {
 
   render(() => {
     return (
-      <Router>
-        <App />
-      </Router>
+      <MetaProvider>
+        <Router>
+          <App />
+        </Router>
+      </MetaProvider>
     );
   }, document.getElementById("root"));
 });

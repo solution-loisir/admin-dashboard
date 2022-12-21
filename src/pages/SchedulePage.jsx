@@ -1,4 +1,5 @@
 import { useContext, createSignal, createComputed, createEffect, on } from "solid-js";
+import { Title } from "@solidjs/meta";
 import { SelectedData } from "../App";
 import Schedule from "../components/Schedule";
 import AgeLegend from "../components/AgeLegend";
@@ -34,6 +35,7 @@ function SchedulePage() {
 
   return (
     <>
+      <Title>Bulle | 🧮 Horaire</Title>
       <AgeLegend />
       <ActivitiesTable full={fullCourses()} available={availableCourses()} total={totalCourses()} />
       <nav class="flex-nav" onClick={delegateHandler}>
