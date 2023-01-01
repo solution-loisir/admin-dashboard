@@ -22,7 +22,7 @@ function RegistrationsCard(props) {
       <Show when={registration().Person.TelephoneWork}>
         <li>Travail : <a href={`tel:${registration().Person.TelephoneWork}`}>{registration().Person.TelephoneWork}</a></li>
       </Show>
-      <li>Date d'inscription : {dateReadable(adjustDate(registration().DateCreated))}</li>
+      <li>Date d'inscription : {new Date(adjustDate(registration().DateCreated)).toLocaleString('fr-CA', {timeZone: "America/New_York", year: 'numeric' , month: 'long', day: 'numeric'})}</li>
       <li>Heure d'inscription : {timeReadable(adjustDate(registration().DateCreated)).replace(/:/, "h")}</li>
       <li>{addEmoji(registration().Category.Name)}</li>
       <li>{`${registration().SubCategory.Name}, ${registration().Activity.Name}`}</li>
