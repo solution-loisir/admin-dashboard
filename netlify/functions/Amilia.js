@@ -22,7 +22,7 @@ exports.handler = async (event, context) => {
 
   const data = [];
   
-  for(let index = 0; index < programs.length; index++) {
+  for(let index = 0; index < 2 /*programs.length*/; index++) {
     const activities = await getActivities(token, programs, { index });
     const activitiesWithRegistrations = registrations.integrateRegistrationsToActivities(activities);
     const spotsStats = getSpotsStats(activities);
