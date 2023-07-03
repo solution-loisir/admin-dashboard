@@ -4,7 +4,7 @@ require("dotenv").config();
 
 module.exports = async (token) => {
 
-  const allPrograms = await getItems(token, path.join(process.env.AMILIA_BASE_URL, "programs?showHidden=true"));
+  const allPrograms = await getItems(token, path.join(process.env.AMILIA_BASE_URL, "programs?showHidden=true&showArchived=true"));
 
   return allPrograms;
 }
