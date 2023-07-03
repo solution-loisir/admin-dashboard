@@ -34,7 +34,7 @@ function App() {
   return (
     <Suspense fallback={<Loader />}>
       <Title>Bulle | 🧮 Tableau de bord</Title>
-      <Show when={data()}>
+      <Show when={data() && state()}>
         <FullData.Provider value={data()}>
           <SelectedData.Provider value={state}>
             <ClipboardCopyFeedback />
